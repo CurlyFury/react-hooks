@@ -1,11 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Main from "./Main";
+import Alert from "./Alert";
+
+export const CoolContext = React.createContext()
 
 function App() {
 
-  return (
-    <div>
+  const [alert, setAlert] = useState(false)
 
-    </div>
+  return (
+    <CoolContext.Provider value={alert}>
+      <div className={'container pt-3'}>
+        <Alert />
+        <Main />
+      </div>
+    </CoolContext.Provider>
   )
 }
 
